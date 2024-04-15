@@ -5,7 +5,7 @@ const buildResponse = require('../helper/buildResponse');
 const router = express.Router();
 
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { login, pwd } = req.body;
     const data = await authUser(login, pwd);
