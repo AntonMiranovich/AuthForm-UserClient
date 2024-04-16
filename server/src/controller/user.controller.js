@@ -2,10 +2,10 @@ const express = require("express");
 const { authUser } = require("../service/user.service");
 const buildResponse = require('../helper/buildResponse');
 
-const router = express.Router();
+const routerUser = express.Router();
 
 
-router.post("/", async (req, res) => {
+routerUser.post("/", async (req, res) => {
   try {
     const { login, pwd } = req.body;
     const data = await authUser(login, pwd);
@@ -15,4 +15,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = routerUser;
