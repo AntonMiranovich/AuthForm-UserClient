@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const routerUser = require("./controller/user.controller");
 const routerClient=require('./controller/client.controller')
+const routerStatus=require('./controller/status.controller')
 const cors = require("cors");
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(
 app.use(bodyParser.json());
 app.use("/auth", routerUser);
 app.use("/client", routerClient);
+app.use("/status", routerStatus);
 
 app.use((error, req, res, _next) => {
   res.send(error.message);
